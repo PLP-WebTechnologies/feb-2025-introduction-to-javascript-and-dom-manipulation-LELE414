@@ -1,26 +1,31 @@
-# Introduction to JavaScript and DOM Manipulation
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Fun</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to the Color Change Page!</h1>
+    <p>Click the button below to change the background color.</p>
+    
+    <button id="changeColorBtn">Change Color</button>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+// Access the button using its ID
+const changeColorBtn = document.getElementById('changeColorBtn');
 
-## Objectives
+// Define an array of colors
+const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A6', '#FFFF33'];
 
-Write basic JavaScript functions.
-Manipulate the DOM dynamically.
-Respond to user interactions.
+// Add an event listener to the button
+changeColorBtn.addEventListener('click', function() {
+    // Randomly pick a color from the array
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-## Instructions
-
-- Create a script.js file and link it to a HTML.
-- Structure the document using DOCTYPE, html, head, and body.
-
->[!NOTE]
->  - Write JavaScript that:
->  - Changes text content dynamically.
->  - Modifies CSS styles via JavaScript.
->  - Adds or removes an element when a button is clicked.
-
-
-# Tasks
-- Create a well-structured HTML5 document.
-- Use at least 5 different HTML elements.
-- Ensure semantic correctness.
-
-Happy Coding! 💻✨
+    // Change the background color of the body
+    document.body.style.backgroundColor = randomColor;
+}
